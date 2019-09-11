@@ -179,10 +179,10 @@ namespace WebApplication.Database
 
 
                 mySecurity locker = new mySecurity();
-                string getEncryptKey = password.Split('æ')[0];
-                string getSalt = password.Split('æ')[1];
+                string getEncryptKey = user.UserPassword.Split('æ')[0];
+                string getSalt = user.UserPassword.Split('æ')[1];
 
-                var result = locker.ValidateHash(user.UserPassword, getSalt, getEncryptKey);
+                var result = locker.ValidateHash(password, getSalt, getEncryptKey);
 
                 if (result)
                 {

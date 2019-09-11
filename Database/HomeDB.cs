@@ -192,10 +192,10 @@ namespace WebApplication.Database
 
 
                 mySecurity locker = new mySecurity();
-                string getEncryptKey = homepassword.Split('æ')[0];
-                string getSalt = homepassword.Split('æ')[1];
+                string getEncryptKey = homeModel.HomePassword.Split('æ')[0];
+                string getSalt = homeModel.HomePassword.Split('æ')[1];
 
-                var result = locker.ValidateHash(homeModel.HomePassword, getSalt, getEncryptKey);
+                var result = locker.ValidateHash(homepassword, getSalt, getEncryptKey);
 
                 if (result)
                 {

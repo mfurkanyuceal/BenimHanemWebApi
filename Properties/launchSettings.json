@@ -21,7 +21,8 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "homes",
-      "applicationUrl": "https://10.3.8.198:5001",
+      //"applicationUrl": "https://10.3.8.198:5001",
+      "applicationUrl": "https://192.168.137.152:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
