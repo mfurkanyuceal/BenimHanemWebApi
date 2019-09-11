@@ -36,22 +36,6 @@ namespace WebApplication.Database
         }
 
 
-        public async Task<List<UserModel>> GetHomeUserModels(string id)
-        {
-            try
-            {
-
-                List<UserModel> dbList = await _context.UserModels.Where<UserModel>(u => u.UserHomeRefID == id).ToListAsync();
-
-                return dbList;
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
 
         public async Task<UserModel> GetHomeUserModelbyUserName(string username)
         {
