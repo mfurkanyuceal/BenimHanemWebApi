@@ -21,7 +21,7 @@ namespace WebApplication
 
         Task<MobileResult> AddHomeProductModel(ProductModel model);
 
-        Task SaveAsnyc();
+        Task SaveAsync();
 
 
 

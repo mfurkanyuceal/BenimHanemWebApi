@@ -41,17 +41,30 @@ namespace WebApplication.Database
 
         public  async Task<MobileResult> DeleteHomeProductModel(ProductModel productModel)
         {
+            var mobileResult = new MobileResult();
+
             try
             {
 
                  _context.ProductModels.Remove(productModel);
 
                 await SaveAsync();
+
+                mobileResult.Data = null;
+                mobileResult.Message = "Başarılı";
+                mobileResult.Result = true;
+
+
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                mobileResult.Data = null;
+                mobileResult.Message = e.Message;
+                mobileResult.Result = false;
+
             }
+
+            return mobileResult;
         }
 
         public async Task<MobileResult> UpdateHomeProductModel(ProductModel newModel)
@@ -84,7 +97,7 @@ namespace WebApplication.Database
         }
 
 
-        private async Task SaveAsync()
+        public async Task SaveAsync()
         {
 
               await _context.SaveChangesAsync();
