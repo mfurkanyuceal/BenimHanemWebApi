@@ -8,8 +8,6 @@ namespace WebApplication.Intefaces
 {
     public interface IUserDB
     {
-
-        Task<List<UserModel>> GetHomeUserModels(string id);
         Task<MobileResult> GetUserModelbyLogin(string username, string password);
         Task<UserModel> GetHomeUserModelbyUserName(string username);
         Task<MobileResult> DeleteUserModel(UserModel userModel);
