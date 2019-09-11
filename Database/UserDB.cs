@@ -55,18 +55,12 @@ namespace WebApplication.Database
 
         public async Task<UserModel> GetHomeUserModelbyUserName(string username)
         {
-            try
-            {
 
-                UserModel user = await _context.UserModels.FirstOrDefaultAsync<UserModel>(u => u.UserName == username);
+            UserModel user = await _context.UserModels.FirstOrDefaultAsync<UserModel>(u => u.UserName == username);
 
-                return user;
+            return user;
 
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+
         }
 
 
