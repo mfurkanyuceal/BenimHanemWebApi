@@ -19,8 +19,6 @@ namespace WebApplication
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args).UseKestrel(options => {
-                options.Listen(IPAddress.Loopback, 5001); //HTTP port
-            }).UseStartup<Startup>();
+            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
     }
 }
