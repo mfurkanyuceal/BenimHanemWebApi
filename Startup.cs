@@ -50,7 +50,7 @@ namespace WebApplication
 
             
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

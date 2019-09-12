@@ -22,7 +22,7 @@
       "launchBrowser": true,
       "launchUrl": "homes",
       //"applicationUrl": "https://192.168.137.152:5001",
-      "applicationUrl": "http://localhost:5001",
+      "applicationUrl": "http://167.71.74.239:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
