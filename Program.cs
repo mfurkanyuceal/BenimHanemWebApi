@@ -12,6 +12,6 @@ namespace WebApplication
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args).UseKestrel().UseUrls("http://167.71.74.239:5001").UseStartup<Startup>();
-        //WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+            //WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
     }
 }
