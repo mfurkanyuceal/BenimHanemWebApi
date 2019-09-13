@@ -136,6 +136,11 @@ namespace WebApplication.Controllers
 
 
             var mobileResult = new MobileResult();
+
+            mobileResult.Result = false;
+            mobileResult.Message = "İStediğim Yer";
+            return mobileResult;
+
             if (ModelState.IsValid)
             {
                 try
