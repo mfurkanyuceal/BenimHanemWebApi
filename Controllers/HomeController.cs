@@ -25,7 +25,19 @@ namespace WebApplication.Controllers
         [Route("{homeid}/homeproducts")]
         public async Task<MobileResult> GetAllHomeProducts(string homeid)
         {
-            var mobileResult = await homeDB.GetAllHomeProducts(homeid);
+
+            var mobileResult = new MobileResult();
+
+            try
+            {
+                mobileResult = await homeDB.GetAllHomeProducts(homeid);
+            }
+            catch (Exception e)
+            {
+                mobileResult.Data = null;
+                mobileResult.Message = e.Message;
+                mobileResult.Result = false;
+            }
             return mobileResult;
 
 
@@ -35,7 +47,19 @@ namespace WebApplication.Controllers
         [Route("{homeid}/homeusers")]
         public async  Task<MobileResult> GetAllHomeUsers(string homeid)
         {
-            var mobileResult = await homeDB.GetAllHomeUsers(homeid);
+
+            var mobileResult = new MobileResult();
+
+            try
+            {
+                 mobileResult = await homeDB.GetAllHomeUsers(homeid);
+            }
+            catch (Exception e)
+            {
+                mobileResult.Data = null;
+                mobileResult.Message = e.Message;
+                mobileResult.Result = false;
+            }
             return mobileResult;
         }
 
@@ -45,7 +69,21 @@ namespace WebApplication.Controllers
         [Route("delete")]
         public async Task<MobileResult> DeleteHomeModel([FromBody]HomeModel homeModel )
         {
-            var mobileResult = await homeDB.DeleteHomeModel(homeModel);
+
+            var mobileResult = new MobileResult();
+
+            try
+            {
+
+               mobileResult = await homeDB.DeleteHomeModel(homeModel);
+
+            }
+            catch (Exception e)
+            {
+                mobileResult.Data = null;
+                mobileResult.Message = e.Message;
+                mobileResult.Result = false;
+            }
             return mobileResult;
         }
 
@@ -54,8 +92,19 @@ namespace WebApplication.Controllers
         [Route("gethomebylogin")]
         public async Task<MobileResult> GetHomeModelbyLogin(string homename, string password)
         {
+            var mobileResult = new MobileResult();
 
-            var mobileResult = await homeDB.GetHomeModelbyLogin(homename,password);
+            try
+            {
+                mobileResult = await homeDB.GetHomeModelbyLogin(homename, password);
+
+            }
+            catch (Exception e)
+            {
+                mobileResult.Data = null;
+                mobileResult.Message = e.Message;
+                mobileResult.Result = false;
+            }
             return mobileResult;
 
         }
@@ -64,8 +113,18 @@ namespace WebApplication.Controllers
         [Route("update")]
         public async Task<MobileResult> UpdateHomeModel([FromBody]HomeModel newModel)
         {
+            var mobileResult = new MobileResult();
 
-            var mobileResult = await homeDB.UpdateHomeModel(newModel);
+            try
+            {
+                mobileResult = await homeDB.UpdateHomeModel(newModel);
+            }
+            catch (Exception e)
+            {
+                mobileResult.Data = null;
+                mobileResult.Message = e.Message;
+                mobileResult.Result = false;
+            }
             return mobileResult;
 
         }
@@ -76,11 +135,21 @@ namespace WebApplication.Controllers
         {
 
 
-            MobileResult mobileResult = new MobileResult();
+            var mobileResult = new MobileResult();
             if (ModelState.IsValid)
             {
+                try
+                {
+                    mobileResult = await homeDB.AddHomeModel(homeModel);
+                }
+                catch (Exception e)
+                {
+                    mobileResult.Result = false;
+                    mobileResult.Message = e.Message;
+                    mobileResult.Data = null;
+                    
+                }
 
-                mobileResult = await homeDB.AddHomeModel(homeModel);
             }
             else
             {
