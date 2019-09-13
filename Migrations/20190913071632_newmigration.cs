@@ -2,7 +2,7 @@
 
 namespace WebApplication.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class newmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,8 @@ namespace WebApplication.Migrations
                 columns: table => new
                 {
                     HomeID = table.Column<string>(nullable: false),
-                    HomeName = table.Column<string>(nullable: true),
-                    HomePassword = table.Column<string>(nullable: true),
+                    HomeName = table.Column<string>(nullable: false),
+                    HomePassword = table.Column<string>(nullable: false),
                     HomeAddress = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -25,10 +25,10 @@ namespace WebApplication.Migrations
                 columns: table => new
                 {
                     ProductID = table.Column<string>(nullable: false),
-                    ProductName = table.Column<string>(nullable: true),
+                    ProductName = table.Column<string>(nullable: false),
                     ProductFromWhere = table.Column<string>(nullable: true),
                     ProductAmount = table.Column<int>(nullable: false),
-                    ProductAmountType = table.Column<string>(nullable: true),
+                    ProductAmountType = table.Column<string>(nullable: false),
                     ProductPrice = table.Column<int>(nullable: false),
                     addedByUserName = table.Column<string>(nullable: true),
                     deletedByUserName = table.Column<string>(nullable: true),
@@ -55,9 +55,9 @@ namespace WebApplication.Migrations
                 columns: table => new
                 {
                     UserID = table.Column<string>(nullable: false),
-                    UserName = table.Column<string>(nullable: true),
-                    UserPassword = table.Column<string>(nullable: true),
-                    UserFullName = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: false),
+                    UserPassword = table.Column<string>(nullable: false),
+                    UserFullName = table.Column<string>(nullable: false),
                     UserPhotoURL = table.Column<string>(nullable: true),
                     UserHomeRefID = table.Column<string>(nullable: true)
                 },

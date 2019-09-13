@@ -25,9 +25,11 @@ namespace WebApplication.Migrations
 
                     b.Property<string>("HomeAddress");
 
-                    b.Property<string>("HomeName");
+                    b.Property<string>("HomeName")
+                        .IsRequired();
 
-                    b.Property<string>("HomePassword");
+                    b.Property<string>("HomePassword")
+                        .IsRequired();
 
                     b.HasKey("HomeID");
 
@@ -41,13 +43,15 @@ namespace WebApplication.Migrations
 
                     b.Property<int>("ProductAmount");
 
-                    b.Property<string>("ProductAmountType");
+                    b.Property<string>("ProductAmountType")
+                        .IsRequired();
 
                     b.Property<string>("ProductFromWhere");
 
                     b.Property<string>("ProductHomeRefID");
 
-                    b.Property<string>("ProductName");
+                    b.Property<string>("ProductName")
+                        .IsRequired();
 
                     b.Property<int>("ProductPrice");
 
@@ -77,13 +81,16 @@ namespace WebApplication.Migrations
                     b.Property<string>("UserID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("UserFullName");
+                    b.Property<string>("UserFullName")
+                        .IsRequired();
 
                     b.Property<string>("UserHomeRefID");
 
-                    b.Property<string>("UserName");
+                    b.Property<string>("UserName")
+                        .IsRequired();
 
-                    b.Property<string>("UserPassword");
+                    b.Property<string>("UserPassword")
+                        .IsRequired();
 
                     b.Property<string>("UserPhotoURL");
 
