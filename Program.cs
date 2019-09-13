@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 namespace WebApplication
 {
 
-    //Bakalım Jenkins çalışıyor mu?
+    //Bakalım Jenkins çalışıyor mu???
     public class Program
     {
         public static void Main(string[] args)
