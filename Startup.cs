@@ -23,14 +23,14 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddEntityFrameworkNpgsql().AddDbContext<ApplicationContext>(opt =>
+            opt.UseNpgsql(Configuration.GetConnectionString("MyAppConnection"))).BuildServiceProvider();
             services.AddTransient<IProductDB, ProductDB>();
             services.AddTransient<IUserDB, UserDB>();
             services.AddTransient<IHomeDB, HomeDB>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddEntityFrameworkNpgsql().AddDbContext<ApplicationContext>(opt =>
-            opt.UseNpgsql(Configuration.GetConnectionString("MyAppConnection")));
 
         }
 
