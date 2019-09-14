@@ -1,5 +1,2 @@
 laylaylom
 :)
-:)
-
-adssssssssssssssssas
